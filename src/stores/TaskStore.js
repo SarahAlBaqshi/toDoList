@@ -26,6 +26,23 @@ class TaskStore {
     await axios.delete(`http://localhost:8000/tasks/${taskID}`);
     this.tasks = this.tasks.filter((task) => task.id !== taskID);
   };
+
+  updateTask = async (updatedTask) => {
+    // update in the backend
+    try {
+      await axios.put(
+        `http://localhost:8000/tasks/${updatedTask.checked}`,
+        updatedTask
+      );
+      // update in the frontend
+      const task = this.tasks.find(
+        (task) => this.tasks.checked === updatedTask.checked
+      );
+      for (const key in updatedTask) task[key] = updatedTask[key];
+    } catch (error) {
+      console.log("TaskStore -> updateTask -> error", error);
+    }
+  };
 }
 
 decorate(TaskStore, {

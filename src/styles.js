@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const CreateButtonStyled = styled.button`
   color: ${(props) => props.theme.backgroundColor};
@@ -13,7 +13,12 @@ export const CreateButtonStyled = styled.button`
 export const DeleteButtonStyled = styled.p`
   color: red;
 `;
-
+export const GlobalStyle = createGlobalStyle`
+ body{
+  color: ${(props) => props.theme.mainColor};
+  background-color: ${(props) => props.theme.backgroundColor}
+}
+`;
 export const ListWrapper = styled.div`
   justify-items: center;
   justify-content: center;
