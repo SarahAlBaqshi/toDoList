@@ -11,6 +11,7 @@ import TaskStore from "../stores/TaskStore";
 
 //Styles
 import ListWrapper from "../styles";
+import AddButton from "../Buttons/AddButton";
 
 const TaskList = () => {
   const TaskList = TaskStore.tasks.map((task) => (
@@ -21,6 +22,7 @@ const TaskList = () => {
     <div className="container">
       {/* <SearchBar setQuery={setQuery} /> */}
       <ListWrapper>{TaskList}</ListWrapper>
+      <AddButton />
     </div>
   );
 };

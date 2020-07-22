@@ -6,13 +6,14 @@ import { observer } from "mobx-react";
 import { TaskWrapper } from "../styles";
 
 //Components
-// import DeleteButton from "../Buttons/DeleteButton";
-// import UpdateButton from "../Buttons/UpdateButton";
+import DeleteButton from "../Buttons/DeleteButton";
 
 const TaskItem = ({ task }) => {
   return (
     <TaskWrapper>
-      <p>{task.task}</p>
+      <input type="checkbox" className="hidden" readonly="" tabindex="0" />
+      <label>{task.task}</label>
+      <DeleteButton taskID={task.id} />
     </TaskWrapper>
   );
 };
