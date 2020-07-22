@@ -26,6 +26,8 @@ export const TaskWrapper = styled.div`
   p {
     text-align: left;
     display: inline-flex;
+
+    padding: 10px 20px;
   }
 `;
 
