@@ -35,10 +35,9 @@ class TaskStore {
         updatedTask
       );
       // update in the frontend
-      const task = this.tasks.find(
-        (task) => this.tasks.checked === updatedTask.checked
-      );
-      for (const key in updatedTask) task[key] = updatedTask[key];
+      const task = this.task.find((task) => task.id === updatedTask.id);
+      //   for (const key in updatedTask) task[key] = updatedTask[key];
+      task.checked = !updatedTask.checked;
     } catch (error) {
       console.log("TaskStore -> updateTask -> error", error);
     }

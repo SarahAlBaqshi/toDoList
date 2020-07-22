@@ -8,10 +8,17 @@ import { TaskWrapper } from "../styles";
 //Components
 import DeleteButton from "../Buttons/DeleteButton";
 
+//Stores
+import TaskStore from "../stores/TaskStore";
+
 const TaskItem = ({ task }) => {
   return (
     <TaskWrapper>
-      <input type="checkbox" className="hidden" readonly="" tabindex="0" />
+      <input
+        type="checkbox"
+        checked={task.checked}
+        onChange={TaskStore.updateTask(task)}
+      />
       <label>{task.task}</label>
       <DeleteButton taskID={task.id} />
     </TaskWrapper>
